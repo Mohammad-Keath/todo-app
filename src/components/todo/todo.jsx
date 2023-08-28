@@ -46,9 +46,9 @@ const ToDo = () => {
   }, [list]);
 
   return (
-    <>
+    <div className='toDo'>
       <Header incomplete={incomplete}/>
-
+      <div className='main'>
       <form onSubmit={handleSubmit}>
 
         <h2>Add To Do Item</h2>
@@ -73,7 +73,8 @@ const ToDo = () => {
         </label>
       </form>
       <List list={list} setting={setting} />
-    </>
+    </div>
+    </div>
   );
 };
 

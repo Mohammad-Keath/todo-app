@@ -4,17 +4,15 @@ import {Pagination} from '@mui/material';
 
 export default function list({list,setting}) {
   const [currentPage, setCurrentPage] = useState(1);
-  const [displayedItems, setDisplayedItems] = useState([]);
   const handlePageChange = (event, newPage) => {
     setCurrentPage(newPage);
   };
 
-  useEffect(()=>{
     const startIndex = (currentPage - 1) * setting.display;
     const endIndex = startIndex + setting.display;
-    setDisplayedItems(list.slice(startIndex, endIndex));
-    // console.log(displayedItems);
-  },[list,currentPage])
+    let displayedItems= list.slice(startIndex, endIndex);
+    console.log(displayedItems);
+ 
   
 
   return (
@@ -29,11 +27,13 @@ export default function list({list,setting}) {
         </div>
         
         ))}
+        <div className='pagination'>
         <Pagination 
         onChange={handlePageChange} 
         count={Math.ceil(list.length / setting.display)}
         variant="outlined" 
         shape="rounded" />
+        </div>
     </div>
   )
 }
