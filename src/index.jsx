@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import App from './app.jsx';
 
@@ -10,4 +10,5 @@ class Main extends React.Component {
 }
 
 const rootElement = document.getElementById('root');
-ReactDOM.render(<Main />, rootElement);
+const root = createRoot(rootElement);
+root.render(<Main />);

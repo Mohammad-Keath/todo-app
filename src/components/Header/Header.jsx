@@ -1,9 +1,11 @@
 import React from 'react'
+import { AiFillHome,AiFillSetting } from 'react-icons/ai';
 
-export default function header({incomplete}) {
+export default function header() {
   return (
     <header>
-    <h1>To Do List: {incomplete} items pending</h1>
+    <a href='/'><AiFillHome/></a>
+    <a href='/setting'><AiFillSetting/></a>
     </header>
   )
 }
