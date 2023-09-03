@@ -27,18 +27,7 @@ const ToDo = () => {
     setList(items);
   }
 
-  function toggleComplete(id) {
 
-    const items = list.map( item => {
-      if ( item.id == id ) {
-        item.complete = ! item.complete;
-      }
-      return item;
-    });
-
-    setList(items);
-
-  }
 
   useEffect(() => {
     let incompleteCount = list.filter(item => !item.complete).length;
@@ -85,7 +74,7 @@ const ToDo = () => {
           <Button type='submit' variant="contained">Add Item</Button>
         </label>
       </form>
-      <List list={list} setting={setting} />
+      <List list={list} setting={setting} setList={setList} />
     </div>
     </div>
   );
