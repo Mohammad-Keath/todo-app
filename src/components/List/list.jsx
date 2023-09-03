@@ -14,11 +14,8 @@ export default function list({list,setting,setList}) {
     const startIndex = (currentPage - 1) * num;
     const endIndex = parseInt(startIndex) + parseInt(num);
     setDisplayedItems(list.slice(startIndex, endIndex));
-    // console.log(list)
-    console.log('num = ',num);
-    console.log('startIndex = ',startIndex);
-    console.log('endIndex = ',endIndex);
   },[list,currentPage,setting])
+
   function toggleComplete(id) {
 
     const items = list.map( item => {
@@ -28,7 +25,7 @@ export default function list({list,setting,setList}) {
       return item;
     });
 
-    setList(items);
+    setList(items)
   }
   
 

@@ -14,12 +14,10 @@ const ToDo = () => {
   const [list, setList] = useState([]);
   const [incomplete, setIncomplete] = useState([]);
   const { handleChange, handleSubmit } = useForm(addItem, defaultValues);
-
   function addItem(item) {
     item.id = list.length;
     item.complete = false;
-    console.log(item);
-    setList([...list, item]);
+    setList((prevList) => prevList.concat(item));
   }
 
   function deleteItem(id) {
@@ -42,7 +40,6 @@ const ToDo = () => {
             setting.setHideCompleted(LSstateInt.hideCompleted)
             setting.setSort(LSstateInt.sort)
     }
-    console.log(LSstate);
 },[])
   return (
     <div className='toDo'>

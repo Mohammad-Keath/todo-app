@@ -23,7 +23,6 @@ export default function settingsForm() {
     }
    
     useEffect(()=>{
-            console.log('heelo');
             let toSave = JSON.stringify(settings)
             localStorage.setItem("state", toSave);
     },[settings])
