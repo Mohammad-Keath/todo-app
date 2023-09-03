@@ -29,9 +29,6 @@ export default function list({list,setting,setList}) {
     });
 
     setList(items);
-    console.log(id);
-    console.log(list);
-
   }
   
 
