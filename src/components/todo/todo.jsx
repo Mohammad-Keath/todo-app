@@ -1,37 +1,44 @@
 import React, { useContext, useEffect, useState } from 'react';
 import useForm from '../../hooks/form.jsx';
-import List from '../List/list.jsx';
+import List from '../List/List.jsx';
 import Header from '../Header/Header.jsx';
 import Button from '@mui/material/Button';
 import { SettingContext } from '../../context/Setting.jsx';
-import { v4 as uuid } from 'uuid';
 
 const ToDo = () => {
   const setting = useContext(SettingContext)
   const [defaultValues] = useState({
     difficulty: 3,
+    // id:uuid()
   });
-  const [list, setList] = useState([]);
+  const [myList, setMyList] = useState([]);
   const [incomplete, setIncomplete] = useState([]);
   const { handleChange, handleSubmit } = useForm(addItem, defaultValues);
+  
   function addItem(item) {
-    item.id = list.length;
+    item.id = myList.length+1;
     item.complete = false;
-    setList((prevList) => prevList.concat(item));
+    const arr =[...myList]
+    arr.push(item)
+    setMyList(arr);
+    // console.log(item);
+    console.log(item.id)
+    console.log(myList)
+    console.log(arr)
   }
 
   function deleteItem(id) {
-    const items = list.filter( item => item.id !== id );
-    setList(items);
+    const items = myList.filter( item => item.id !== id );
+    setMyList(items);
   }
 
 
 
   useEffect(() => {
-    let incompleteCount = list.filter(item => !item.complete).length;
+    let incompleteCount = myList.filter(item => !item.complete).length;
     setIncomplete(incompleteCount);
     document.title = `To Do List: ${incomplete}`;
-  }, [list]);
+  }, [myList]);
   useEffect(()=>{
     const LSstate = localStorage.getItem("state")
     const LSstateInt = JSON.parse(LSstate)
@@ -71,7 +78,7 @@ const ToDo = () => {
           <Button type='submit' variant="contained">Add Item</Button>
         </label>
       </form>
-      <List list={list} setting={setting} setList={setList} />
+      <List list={myList} setting={setting} setList={setMyList} />
     </div>
     </div>
   );

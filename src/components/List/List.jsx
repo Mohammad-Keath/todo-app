@@ -2,7 +2,7 @@ import React,{useEffect, useState} from 'react'
 import {Pagination} from '@mui/material';
 
 
-export default function list({list,setting,setList}) {
+export default function List({list,setting,setList}) {
   const [currentPage, setCurrentPage] = useState(1);
   const [displayedItems, setDisplayedItems] = useState([]);
   const handlePageChange = (event, newPage) => {

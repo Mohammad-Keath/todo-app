@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+
+
 const useForm = (callback, defaultValues={}) => {
 
   const [values, setValues] = useState({});
@@ -18,6 +20,7 @@ const useForm = (callback, defaultValues={}) => {
     }
 
     setValues(values => ({ ...values, [name]: value }));
+    
   };
 
   useEffect( () => {
