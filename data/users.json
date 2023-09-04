@@ -1,0 +1,124 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "AHMAD",
+      "password": "123",
+      "role": "user",
+      "capabilities": [
+        "read"
+      ]
+    },
+    {
+      "id": 2,
+      "username": "afnan",
+      "password": "123",
+      "role": "user",
+      "capabilities": [
+        "read"
+      ]
+    },
+    {
+      "id": 3,
+      "username": "esraa",
+      "password": "123",
+      "role": "admin",
+      "capabilities": [
+        "read",
+        "edit",
+        "delete",
+        "add"
+      ]
+    },
+    {
+      "id": 4,
+      "username": "mariam",
+      "password": "123",
+      "role": "user",
+      "capabilities": [
+        "read"
+      ]
+    },
+    {
+      "id": 5,
+      "username": "ahmad",
+      "password": "123",
+      "role": "user",
+      "capabilities": [
+        "read"
+      ]
+    },
+    {
+      "id": 6,
+      "username": "mohammad",
+      "password": "123",
+      "role": "admin",
+      "capabilities": [
+        "read",
+        "edit",
+        "delete",
+        "add"
+      ]
+    },
+    {
+      "id": 7,
+      "username": "esraa",
+      "password": "123",
+      "role": "user",
+      "capabilities": [
+        "read"
+      ]
+    },
+    {
+      "id": 8,
+      "username": "afnan",
+      "password": "123",
+      "role": "admin",
+      "capabilities": [
+        "read",
+        "edit",
+        "delete",
+        "add"
+      ]
+    },
+    {
+      "id": 9,
+      "username": "malak",
+      "password": "123",
+      "role": "user",
+      "capabilities": [
+        "read"
+      ]
+    },
+    {
+      "id": 10,
+      "username": "ahmad",
+      "password": "123",
+      "role": "user",
+      "capabilities": [
+        "read"
+      ]
+    },
+    {
+      "id": 11,
+      "username": "malek",
+      "password": "123",
+      "role": "admin",
+      "capabilities": [
+        "read",
+        "edit",
+        "delete",
+        "add"
+      ]
+    },
+    {
+      "id": 12,
+      "username": "ahmad",
+      "password": "123",
+      "role": "user",
+      "capabilities": [
+        "read"
+      ]
+    }
+  ]
+}
