@@ -1,8 +1,10 @@
-import React,{useEffect, useState} from 'react'
+import React,{useContext, useEffect, useState} from 'react'
 import {Pagination} from '@mui/material';
 import apiReq from '../Auth/apiReq.jsx';
+import Settings, { SettingContext } from '../../context/Setting.jsx';
 
 export default function List({list,setting,setList}) {
+  const settings = useContext(SettingContext)
   const API_URL='http://localhost:3500/todo'
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -74,7 +76,7 @@ export default function List({list,setting,setList}) {
           <p><small>Assigned to: {item.assignee}</small></p>
           <p><small>Difficulty: {item.difficulty}</small></p>
           <div onClick={()=>toggleComplete(item.id)}>Complete: {item.complete.toString()}</div>
-          <button onClick={(e)=>handleDelete(e,item.id)}>Delete</button>
+          {settings.can('delete') && <button onClick={(e)=>handleDelete(e,item.id)}>Delete</button>}
           <hr />
         </div>
         

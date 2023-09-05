@@ -17,9 +17,7 @@
       "username": "malek",
       "password": "123",
       "role": "user",
-      "capabilities": [
-        "read"
-      ]
+      "capabilities": ["read","edit"]
     }
   ],
   "todo": [
