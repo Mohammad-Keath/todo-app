@@ -28,6 +28,7 @@ export default function settingsForm() {
     },[settings])
   return (
     <>
+    {settings.user && <div>
     <div className='secHeader'>
         <h1>Manage Settings</h1>
     </div>
@@ -59,6 +60,7 @@ export default function settingsForm() {
             </div>}
             </div>
     </div>
+    </div>}
     </>
   )
 }
