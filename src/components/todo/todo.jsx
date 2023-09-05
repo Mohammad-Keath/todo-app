@@ -22,7 +22,7 @@ const ToDo = () => {
 
   async function addItem(item) {
     
-    item.id = myList.length+1;
+    item.id = myList.length ? myList[myList.length - 1].id + 1 : 1;
     item.complete = false;
     const arr =[...myList]
     arr.push(item)
@@ -73,6 +73,7 @@ const ToDo = () => {
     }
     
   },[])
+  
   return (
     <>
      {!fetchError && <div className='toDo'>
@@ -81,6 +82,7 @@ const ToDo = () => {
     <h1>To Do List: {incomplete} items pending</h1>
     </div>
       <h3>{setting.user.username}</h3>
+      <button onClick={setting.signoutHandler}>Signout</button>
       {/* <Header incomplete={incomplete}/> */}
       <div className='main'>
       {setting.can('add') && <form onSubmit={handleSubmit}>
