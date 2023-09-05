@@ -77,6 +77,7 @@ function Signup() {
   return (
     <div>
       {!isLoading&&<form className='signup' onSubmit={handleSubmit}>
+            <h2>Sign up</h2>
             <label>username</label>
             <input
                 autoFocus
@@ -111,6 +112,7 @@ function Signup() {
             >
                 sign up
             </button>
+            <p>have an account <a href='/signin'>Signin</a></p>
         </form>}
       {isLoading && <p>Loading Items...</p>}
         {fetchError && <p style={{ color: "red" }}>{`Error: ${fetchError}`}</p>}

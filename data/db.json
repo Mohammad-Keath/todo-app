@@ -16,84 +16,6 @@
       "id": 2,
       "username": "malek",
       "password": "123",
-      "role": "admin",
-      "capabilities": [
-        "read",
-        "edit",
-        "delete",
-        "add"
-      ]
-    },
-    {
-      "id": 3,
-      "username": "ahmad",
-      "password": "123",
-      "role": "user",
-      "capabilities": [
-        "read"
-      ]
-    },
-    {
-      "id": 4,
-      "username": "esraa",
-      "password": "123",
-      "role": "admin",
-      "capabilities": [
-        "read",
-        "edit",
-        "delete",
-        "add"
-      ]
-    },
-    {
-      "id": 5,
-      "username": "ahmad",
-      "password": "123",
-      "role": "user",
-      "capabilities": [
-        "read"
-      ]
-    },
-    {
-      "id": 6,
-      "username": "afnan",
-      "password": "123",
-      "role": "user",
-      "capabilities": [
-        "read"
-      ]
-    },
-    {
-      "id": 7,
-      "username": "esraa",
-      "password": "123",
-      "role": "user",
-      "capabilities": [
-        "read"
-      ]
-    },
-    {
-      "id": 8,
-      "username": "ahmad",
-      "password": "123",
-      "role": "user",
-      "capabilities": [
-        "read"
-      ]
-    },
-    {
-      "id": 9,
-      "username": "ahmad",
-      "password": "123",
-      "role": "user",
-      "capabilities": [
-        "read"
-      ]
-    },
-    {
-      "id": 10,
-      "username": "ahmad",
-      "password": "123",
       "role": "user",
       "capabilities": [
         "read"
@@ -102,21 +24,15 @@
   ],
   "todo": [
     {
-      "complete": false,
-      "id": 1
-    },
-    {
-      "complete": false,
-      "id": 2
-    },
-    {
-      "complete": false,
-      "id": 3
+      "difficulty": 3,
+      "text": "milk",
+      "id": 1,
+      "complete": false
     },
     {
       "difficulty": 3,
-      "text": 5,
-      "id": 4,
+      "text": "sugar",
+      "id": 2,
       "complete": false
     }
   ]

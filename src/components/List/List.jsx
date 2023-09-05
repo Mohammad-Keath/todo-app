@@ -20,11 +20,11 @@ export default function List({list,setting,setList}) {
   },[list,currentPage,setting])
 
   async function toggleComplete(id) {
-    let itemCompleteStatus
+    let changedItem
     const items = list.map( item => {
       if ( item.id == id ) {
         item.complete = ! item.complete;
-        itemCompleteStatus= item.complete
+        changedItem= item
       }
       return item;
     });
@@ -34,13 +34,35 @@ export default function List({list,setting,setList}) {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ complete: !itemCompleteStatus })
+      body: JSON.stringify(changedItem)
     }
     const result = await apiReq(`${API_URL}/${id}`, updateOptions);
     if (result) setFetchError(result);
 
-    
     setList(items)
+  }
+  const handleDelete = async (e,id)=>{ 
+    let index
+    list.map( (item,idx) => {
+      if ( item.id == id ) {
+        index = idx
+      }
+      return item;
+    });
+    let arr = [...list]
+    arr.splice(index,1)
+    console.log(arr)
+
+    const deleteOptions = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    const result = await apiReq(`${API_URL}/${id}`, deleteOptions);
+    if (result) setFetchError(result);
+
+    setList(arr)
   }
   
 
@@ -52,6 +74,7 @@ export default function List({list,setting,setList}) {
           <p><small>Assigned to: {item.assignee}</small></p>
           <p><small>Difficulty: {item.difficulty}</small></p>
           <div onClick={()=>toggleComplete(item.id)}>Complete: {item.complete.toString()}</div>
+          <button onClick={(e)=>handleDelete(e,item.id)}>Delete</button>
           <hr />
         </div>
         
