@@ -2,25 +2,7 @@
   "users": [
     {
       "id": 1,
-      "username": "AHMAD",
-      "password": "123",
-      "role": "user",
-      "capabilities": [
-        "read"
-      ]
-    },
-    {
-      "id": 2,
-      "username": "afnan",
-      "password": "123",
-      "role": "user",
-      "capabilities": [
-        "read"
-      ]
-    },
-    {
-      "id": 3,
-      "username": "esraa",
+      "username": "ahmad",
       "password": "123",
       "role": "admin",
       "capabilities": [
@@ -31,12 +13,36 @@
       ]
     },
     {
-      "id": 4,
-      "username": "mariam",
+      "id": 2,
+      "username": "malek",
+      "password": "123",
+      "role": "admin",
+      "capabilities": [
+        "read",
+        "edit",
+        "delete",
+        "add"
+      ]
+    },
+    {
+      "id": 3,
+      "username": "ahmad",
       "password": "123",
       "role": "user",
       "capabilities": [
         "read"
+      ]
+    },
+    {
+      "id": 4,
+      "username": "esraa",
+      "password": "123",
+      "role": "admin",
+      "capabilities": [
+        "read",
+        "edit",
+        "delete",
+        "add"
       ]
     },
     {
@@ -50,14 +56,11 @@
     },
     {
       "id": 6,
-      "username": "mohammad",
+      "username": "afnan",
       "password": "123",
-      "role": "admin",
+      "role": "user",
       "capabilities": [
-        "read",
-        "edit",
-        "delete",
-        "add"
+        "read"
       ]
     },
     {
@@ -71,19 +74,16 @@
     },
     {
       "id": 8,
-      "username": "afnan",
+      "username": "ahmad",
       "password": "123",
-      "role": "admin",
+      "role": "user",
       "capabilities": [
-        "read",
-        "edit",
-        "delete",
-        "add"
+        "read"
       ]
     },
     {
       "id": 9,
-      "username": "malak",
+      "username": "ahmad",
       "password": "123",
       "role": "user",
       "capabilities": [
@@ -98,27 +98,26 @@
       "capabilities": [
         "read"
       ]
+    }
+  ],
+  "todo": [
+    {
+      "complete": false,
+      "id": 1
     },
     {
-      "id": 11,
-      "username": "malek",
-      "password": "123",
-      "role": "admin",
-      "capabilities": [
-        "read",
-        "edit",
-        "delete",
-        "add"
-      ]
+      "complete": false,
+      "id": 2
     },
     {
-      "id": 12,
-      "username": "ahmad",
-      "password": "123",
-      "role": "user",
-      "capabilities": [
-        "read"
-      ]
+      "complete": false,
+      "id": 3
+    },
+    {
+      "difficulty": 3,
+      "text": 5,
+      "id": 4,
+      "complete": false
     }
   ]
 }

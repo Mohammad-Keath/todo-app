@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import cookie from 'react-cookies';
+import {SettingContext}from '../../context/Setting'
 
 function signin() {
+    const settings = useContext(SettingContext)
+
     const API_URL = 'http://localhost:3500/users'
     const [users, setUsers] = useState([]);
     const [fetchError, setFetchError] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [username, setUsername] = useState('');
-    const [login, setLogin] = useState(false);
-    const [myAcc, setMyAcc] = useState({});
     const [userpassword, setUserpassword] = useState('');
     
     const navigate = useNavigate();
@@ -27,7 +29,7 @@ function signin() {
             setIsLoading(false);
           }
         }
-        setTimeout(() => fetchUsers(), 2000);
+        setTimeout(() => fetchUsers(), 500);
     },[])
 
         const authUser = async (username,password) => {
@@ -35,8 +37,8 @@ function signin() {
             users.map(user=>{
                 if(user.username == username){
                     if(user.password==password){
-                        setLogin(true)
-                        setMyAcc(user)
+                        settings.setUser(user)
+                        cookie.save('user',user)
                         navigate('/')
                     }
                 }
