@@ -38,7 +38,7 @@ function Signup() {
             let capabilities 
             if(userrole === "admin"){
               capabilities = ["read","edit","delete","add"]
-            }else{ capabilities = ["read"]}
+            }else{ capabilities = ["read","edit"]}
             const myNewUser = { "id":id, "username":username,"password":password,"role":userrole,"capabilities":capabilities };
             const usersList = [...users, myNewUser];
             navigate('/signin')
